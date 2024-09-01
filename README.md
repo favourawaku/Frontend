@@ -1,53 +1,78 @@
-DApp README
+# UserProfile DApp
 
-Introduction
-Welcome to the Metacrafters ATM decentralized application (DApp)!
+A simple decentralized application (DApp) that allows users to manage their profiles on the Ethereum blockchain. Users can set, update, and view profiles containing their name, age, and email.
 
-This DApp allows users to send messages on the Ethereum blockchain using a smart contract. Users can connect their MetaMask wallet to interact with the DApp and send messages.
+## Smart Contract Overview
 
-Getting Started
-To run this DApp locally, follow these steps:
+The `UserProfile` smart contract provides functionalities to:
+- Set or update a user profile.
+- Retrieve a user's profile.
+- Delete a user's profile (admin only).
 
-Clone the repository:
+## Prerequisites
 
-bash
-Copy code
-git clone <repository-url>
-Install dependencies:
+Before you begin, ensure you have met the following requirements:
+- Node.js and npm installed.
+- MetaMask browser extension installed and configured.
+- An Ethereum wallet with testnet ETH for gas fees.
+- Access to an Ethereum testnet (like Rinkeby or Goerli).
 
-Copy code
-npm install
-Run the DApp:
+## Installation
 
-sql
-Copy code
-npm start
-Make sure you have MetaMask installed in your browser.
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/UserProfile-DApp.git
+    cd UserProfile-DApp
+    ```
 
-Connect your MetaMask wallet to the DApp by clicking on the "Connect Metamask Wallet" button.
+2. **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-Interact with the DApp by setting messages, getting the last message sent, and getting the sender of the last message.
+## Deploying the Smart Contract
 
-Functionality
-Setting a Favourite Drink
-Enter a message in the input field under the "Set Favourite Drink" section.
-Click on the "Set Favourite Drink" button.
-Your message will be sent to the blockchain.
-Getting the Favourite Drink
-Click on the "Get Favourite Drink" button under the "Get Favourite Drink" section.
-The last Favourite Drink sent on the blockchain will be displayed.
-Getting the Last Sender
-Click on the "Get Last Sender" button under the "Get Last Sender" section.
-The address of the sender who sent the last message will be displayed.
-Resetting Messages
-Click on the "Reset" button under the "Reset" section to clear the last message and last sender.
-Smart Contract
-The smart contract MessageContract.sol deployed on the Localhost blockchain facilitates message sending and retrieval.
+1. **Compile and Deploy the Smart Contract using Remix:**
+   - Go to [Remix IDE](https://remix.ethereum.org/).
+   - Create a new file named `UserProfile.sol` and copy the smart contract code into it.
+   - Compile the contract.
+   - Deploy it on a testnet using MetaMask.
 
-Technologies Used
-React.js for the front-end development.
-Solidity for smart contract development.
-MetaMask for wallet interaction.
-ethers.js for Ethereum interaction.
-License
-This DApp is licensed under the MIT License.
+2. **Update the Contract Address and ABI in your React app:**
+   - Replace `contractAddress` in `HomePage.js` with the deployed contract address.
+   - Make sure the ABI matches the compiled contract ABI.
+
+## Running the DApp
+
+1. **Start the development server:**
+    ```bash
+    npm start
+    ```
+2. **Open the app in your browser:**
+   - The app will run on `http://localhost:3000`.
+
+## Usage
+
+- **Connect Wallet:** Use the "Connect MetaMask Wallet" button to connect your MetaMask wallet.
+- **Set Profile:** Enter your name, age, and email, then click "Register" to save your profile on the blockchain.
+- **View Profile:** Enter an Ethereum address to view the associated profile details.
+
+## Project Structure
+
+- **Smart Contracts:** Located in the `contracts` folder, specifically `UserProfile.sol`.
+- **Frontend:** React code for interacting with the smart contract is in `HomePage.js`.
+
+## Technologies Used
+
+- **Solidity:** Smart contract language for the Ethereum blockchain.
+- **JavaScript (React):** Frontend framework for building the user interface.
+- **Ethers.js:** Library for interacting with Ethereum.
+- **MetaMask:** Ethereum wallet for connecting to the blockchain.
+
+## Author
+
+Favour Sabo
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
